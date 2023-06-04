@@ -7,11 +7,16 @@ dotenv.config();
 
 const connect = () => {
    mongoose.connect(process.env.MONGO)
+       .then(() => {
+          console.log("connted");
+       })
+       .catch ((err) => {
+          throw err
+       });
 }
 
-app.use("/", (req, res) => {
-   console.log("weli");
-})
+
 app.listen("5002", (req, res) => {
+   connect()
    console.log("hi aleena");
 });
