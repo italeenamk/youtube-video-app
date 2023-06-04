@@ -1,29 +1,41 @@
 const mongoose = require("mongoose");
 
 const VideoSchema = new mongoose.Schema({
-        name:{
-            type: String,
-            required: true,
-            unique: true
-        },
-        email:{
-            type: String,
-            required: true,
-            unique: true
-        },
-        password:{
+        userId:{
             type: String,
             required: true,
         },
-        img:{
+        title:{
             type: String,
+            required: true,
         },
-        subscribers:{
+        description:{
+            type: String,
+            required: true,
+        },
+        imgUrl:{
+            type: String,
+            required: true,
+        },
+        videoUrl:{
+            type: String,
+            required: true,
+        },
+        views:{
             type: Number,
-            default: 0
+            default: 0,
         },
-        subscriberUsers:{
-            type: [String]
+        tags:{
+            type: [String],
+            default: [],
+        },
+        likes:{
+            type: [String],
+            default: [],
+        },
+        dislike:{
+            type: [String],
+            default: [],
         },
     },
     { timestamps: true }
