@@ -1,5 +1,6 @@
 const express = require("express");
 const dotenv = require("dotenv");
+const userRoutes =  "./routes/users";
 const mongoose = require("mongoose");
 const app =  express();
 
@@ -15,6 +16,7 @@ const connect = () => {
        });
 }
 
+app.use("/api/users", userRoutes);
 
 app.listen("5002", (req, res) => {
    connect()
