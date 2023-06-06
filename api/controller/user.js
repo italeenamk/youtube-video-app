@@ -1,3 +1,3 @@
-export const test =()=> {
+ const test =()=> {
     console.log("test is working")
 };
